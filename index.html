@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Govindanand Adarsh Vidya Mandir Senior Secondary School, Abu Road. Quality value-based Hindi medium education.">
+  <title>Govindanand Adarsh Vidya Mandir | Home</title>
+  
+  <!-- CSS Library CDN Links -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  
+  <!-- Custom Styles -->
+  <link href="style.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Navigation Header -->
+  <nav class="navbar navbar-expand-lg navbar-custom sticky-top">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+        <img src="school logo.jpeg" alt="GAVM School Logo" class="navbar-brand-img">
+        <div class="navbar-brand-text">
+          गोविंदानंद आदर्श विद्या मंदिर
+          <span>GOVINDANAND ADARSH VIDYA MANDIR</span>
+        </div>
+      </a>
+      
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars"></i>
+      </button>
+      
+      <div class="collapse navbar-collapse" id="mainNavbar">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-center">
+          <li class="nav-item">
+            <a class="nav-link nav-link-custom active" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-link-custom" href="about.html">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-link-custom" href="academics.html">Academics</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-link-custom" href="infrastructure.html">Infrastructure</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-link-custom" href="activities.html">Activities</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-link-custom" href="gallery.html">Gallery</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-link-custom" href="alumni.html">Alumni</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-link-custom" href="contact.html">Contact Us</a>
+          </li>
+          <li class="nav-item ms-lg-2">
+            <button id="themeToggle" class="theme-toggle-btn" aria-label="Toggle Dark Mode">
+              <i class="fas fa-moon"></i>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Carousel Section -->
+  <section class="hero-carousel">
+    <div id="heroSlider" class="carousel slide carousel-fade h-100" data-bs-ride="carousel" data-bs-interval="6000">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#heroSlider" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#heroSlider" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#heroSlider" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-inner h-100">
+        <!-- Slide 1: Campus -->
+        <div class="carousel-item carousel-item-custom h-100 active" style="background-image: url('campus1.png');">
+          <div class="carousel-overlay"></div>
+          <div class="carousel-caption-custom">
+            <h4 class="hero-subtitle mb-2" data-aos="fade-down" data-aos-delay="100">Culture • Education • Discipline</h4>
+            <h1 class="hero-title" data-aos="fade-up" data-aos-delay="300">संस्कार, शिक्षा और अनुशासन का संगम</h1>
+            <p class="hero-description" data-aos="fade-up" data-aos-delay="500">
+              Govindanand Adarsh Vidya Mandir Senior Secondary School is a value-based Hindi medium institution dedicated to academic excellence, discipline, Indian culture, and holistic development. The school strives to create responsible citizens and future leaders through quality education and strong moral foundations.
+            </p>
+            <div class="d-flex flex-wrap gap-3" data-aos="fade-up" data-aos-delay="700">
+              <a href="infrastructure.html" class="btn btn-primary-custom">Explore Campus</a>
+              <a href="about.html" class="btn btn-secondary-custom text-white border-white">About School</a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Slide 2: Annual Functions -->
+        <div class="carousel-item carousel-item-custom h-100" style="background-image: url('annual.jpg');">
+          <div class="carousel-overlay"></div>
+          <div class="carousel-caption-custom">
+            <h4 class="hero-subtitle mb-2">Knowledge • Character • Nation Building</h4>
+            <h1 class="hero-title">Holistic Development & Cultural Heritage</h1>
+            <p class="hero-description">
+              We impart knowledge combined with moral instruction, leadership capabilities, sportsmanship, and values deeply rooted in Indian traditions.
+            </p>
+            <div class="d-flex flex-wrap gap-3">
+              <a href="activities.html" class="btn btn-primary-custom">View Activities</a>
+              <a href="alumni.html" class="btn btn-secondary-custom text-white border-white">Our Alumni</a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Slide 3: Prayer Assembly -->
+        <div class="carousel-item carousel-item-custom h-100" style="background-image: url('prayer.png');">
+          <div class="carousel-overlay"></div>
+          <div class="carousel-caption-custom">
+            <h4 class="hero-subtitle mb-2">Vidya Bharati Tradition</h4>
+            <h1 class="hero-title">Morning Prayer & Value Education</h1>
+            <p class="hero-description">
+              Every day begins with collective prayer, meditation, and character building sessions to cultivate peace, positive thoughts, and creative minds.
+            </p>
+            <div class="d-flex flex-wrap gap-3">
+              <a href="contact.html" class="btn btn-primary-custom">Admission Info</a>
+              <a href="gallery.html" class="btn btn-secondary-custom text-white border-white">Photo Gallery</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Slide Controls -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#heroSlider" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#heroSlider" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- School Highlights Section -->
+  <section class="py-5 my-5">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-subtitle">School Highlights</span>
+        <h2 class="section-title">Our Core Pillars</h2>
+      </div>
+      
+      <div class="row g-4">
+        <!-- Card 1: Discipline First -->
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+          <div class="glass-card">
+            <div class="glass-card-icon">
+              <i class="fas fa-user-shield"></i>
+            </div>
+            <h4 class="mb-3">Discipline First</h4>
+            <p class="text-muted">The school is widely recognized for its excellent student discipline, structured daily routines, and outstanding moral conduct.</p>
+          </div>
+        </div>
+        
+        <!-- Card 2: Quality Education -->
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+          <div class="glass-card">
+            <div class="glass-card-icon">
+              <i class="fas fa-graduation-cap"></i>
+            </div>
+            <h4 class="mb-3">Quality Education</h4>
+            <p class="text-muted">Building a strong academic foundation. Highly qualified teachers provide specialized mentorship and instruction in the Arts Stream.</p>
+          </div>
+        </div>
+        
+        <!-- Card 3: Cultural Heritage -->
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+          <div class="glass-card">
+            <div class="glass-card-icon">
+              <i class="fas fa-om"></i>
+            </div>
+            <h4 class="mb-3">Cultural Heritage</h4>
+            <p class="text-muted">Aligned with Vidya Bharati traditions, we incorporate Indian values, patriotic pride, yoga, and cultural learning into our daily studies.</p>
+          </div>
+        </div>
+        
+        <!-- Card 4: Sports Development -->
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+          <div class="glass-card">
+            <div class="glass-card-icon">
+              <i class="fas fa-running"></i>
+            </div>
+            <h4 class="mb-3">Sports Development</h4>
+            <p class="text-muted">Promoting physical fitness and sportsmanship through daily exercises, parades, yoga, and regional sports tournaments.</p>
+          </div>
+        </div>
+        
+        <!-- Card 5: Environmental Awareness -->
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
+          <div class="glass-card">
+            <div class="glass-card-icon">
+              <i class="fas fa-leaf"></i>
+            </div>
+            <h4 class="mb-3">Environmental Awareness</h4>
+            <p class="text-muted">A green, eco-conscious campus supporting tree plantation drives, water conservation, and eco-friendly learning systems.</p>
+          </div>
+        </div>
+        
+        <!-- Card 6: Character Building -->
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
+          <div class="glass-card">
+            <div class="glass-card-icon">
+              <i class="fas fa-praying-hands"></i>
+            </div>
+            <h4 class="mb-3">Character Building</h4>
+            <p class="text-muted">Dedicated to creating responsible, empathetic, and patriotic citizens ready to lead the nation's future development.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Infrastructure Preview Section -->
+  <section class="py-5 bg-light-section" style="background-color: var(--bg-white);">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-subtitle">Modern Resources</span>
+        <h2 class="section-title">Infrastructure Preview</h2>
+      </div>
+      
+      <div class="row g-4">
+        <!-- Building Preview -->
+        <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="100">
+          <div class="infra-card">
+            <div class="infra-img-wrapper" data-lightbox="campus2.png" data-caption="Spacious School Building & Clean Campus">
+              <img src="campus2.png" alt="School Building Preview">
+              <button class="view-btn">Zoom Image <i class="fas fa-expand"></i></button>
+            </div>
+            <div class="infra-content text-center">
+              <h4>School Building</h4>
+              <p class="text-muted small">Well-designed, spacious, and highly clean educational campus</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Computer Lab Preview -->
+        <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="200">
+          <div class="infra-card">
+            <div class="infra-img-wrapper" data-lightbox="computer lab.jpeg" data-caption="Well-equipped computer laboratory">
+              <img src="computer lab.jpeg" alt="Computer Lab Preview">
+              <button class="view-btn">Zoom Image <i class="fas fa-expand"></i></button>
+            </div>
+            <div class="infra-content text-center">
+              <h4>Computer Laboratory</h4>
+              <p class="text-muted small">Modern computer systems with secure internet and learning tools</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- ATL Preview -->
+        <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="300">
+          <div class="infra-card">
+            <div class="infra-img-wrapper" data-lightbox="atal trinkering lab (1).jpg" data-caption="Atal Tinkering Lab for scientific innovations">
+              <img src="atal trinkering lab (1).jpg" alt="Atal Tinkering Lab Preview">
+              <button class="view-btn">Zoom Image <i class="fas fa-expand"></i></button>
+            </div>
+            <div class="infra-content text-center">
+              <h4>Atal Tinkering Lab</h4>
+              <p class="text-muted small">Special laboratory dedicated to fostering curiosity and innovation</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="text-center mt-5">
+        <a href="infrastructure.html" class="btn btn-primary-custom">View All Facilities</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Activities Preview Section -->
+  <section class="py-5">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-subtitle">Creative Events</span>
+        <h2 class="section-title">Activities Preview</h2>
+      </div>
+      
+      <div class="row g-4">
+        <!-- Item 1: Cultural programs -->
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+          <div class="image-zoom-container" style="height: 350px;">
+            <img src="annual1 (2).png" alt="Cultural Programs" class="image-zoom">
+            <div class="image-overlay-info">
+              <span class="badge bg-primary mb-2 align-self-start">Annual Function</span>
+              <h4>Cultural Programs</h4>
+              <p class="small text-light-50 mb-0">Imparting stage presence, group dances, dramas, and patriotic music.</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Item 2: Prayer Assembly -->
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+          <div class="image-zoom-container" style="height: 350px;">
+            <img src="prayer.png" alt="Prayer Assembly" class="image-zoom">
+            <div class="image-overlay-info">
+              <span class="badge bg-primary mb-2 align-self-start">Morning Routine</span>
+              <h4>Prayer Assembly</h4>
+              <p class="small text-light-50 mb-0">Starting with peaceful prayers, Gayatri Mantra recitation, and yoga drill.</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Item 3: Parade -->
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+          <div class="image-zoom-container" style="height: 350px;">
+            <img src="paraid.jpeg" alt="Student Parade" class="image-zoom">
+            <div class="image-overlay-info">
+              <span class="badge bg-primary mb-2 align-self-start">Discipline</span>
+              <h4>Student Parade</h4>
+              <p class="small text-light-50 mb-0">Outstanding marching band and student parade during Independence Day.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="text-center mt-5">
+        <a href="activities.html" class="btn btn-secondary-custom">View All Activities</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Alumni Highlight Section -->
+  <section class="py-5 text-white position-relative overflow-hidden" style="background: linear-gradient(135deg, var(--secondary) 0%, #1E293B 100%);">
+    <div class="position-absolute top-50 start-50 translate-middle" style="font-size: 30rem; opacity: 0.03; font-family: sans-serif; pointer-events: none;">GAVM</div>
+    <div class="container py-4 text-center position-relative z-1" data-aos="fade-up">
+      <span class="text-primary fw-bold text-uppercase tracking-wider d-block mb-2">Our Alumni Network</span>
+      <h2 class="mb-3" style="font-size: 2.5rem; font-weight: 800;"> गौरवशाली पूर्व छात्र नेटवर्क</h2>
+      <p class="mx-auto mb-4" style="max-width: 650px; color: #94A3B8;">
+        GAVM graduates work at prestigious levels worldwide. If you are an alumnus, connect with us to stay in touch and inspire current students.
+      </p>
+      <div class="d-flex justify-content-center gap-3">
+        <a href="alumni.html" class="btn btn-primary-custom">Join Alumni Network</a>
+        <a href="alumni.html" class="btn btn-secondary-custom text-white border-white">Alumni Directory</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer class="footer-custom">
+    <div class="container">
+      <div class="row g-4">
+        <!-- Logo and About Column -->
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+          <div class="d-flex align-items-center gap-2 mb-3">
+            <img src="school logo.jpeg" alt="GAVM Logo" class="footer-logo">
+            <div>
+              <h5 class="footer-brand-title">गोविंदानंद आदर्श विद्या मंदिर</h5>
+              <span class="footer-brand-sub">Govindanand Adarsh Vidya Mandir</span>
+            </div>
+          </div>
+          <p class="small text-muted mb-3">Dedicated to the holistic development of students through quality education, discipline, and cultural values. An outstanding Hindi-medium school in Sirohi, Rajasthan.</p>
+          <div class="social-icons">
+            <a href="#" class="social-icon-btn"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-icon-btn"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-icon-btn"><i class="fab fa-youtube"></i></a>
+            <a href="#" class="social-icon-btn"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+        
+        <!-- Quick Links Column -->
+        <div class="col-lg-2 col-md-6" data-aos="fade-up" data-aos-delay="200">
+          <h5 class="footer-heading">Quick Links</h5>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="academics.html">Academics</a></li>
+            <li><a href="infrastructure.html">Infrastructure</a></li>
+            <li><a href="activities.html">Activities</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="alumni.html">Alumni</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        
+        <!-- Contact Info Column -->
+        <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+          <h5 class="footer-heading">Contact Details</h5>
+          <ul class="footer-links text-muted" style="padding-left: 0;">
+            <li class="mb-3 d-flex gap-2">
+              <i class="fas fa-map-marker-alt text-primary mt-1"></i>
+              <span>Govinddham, Abu Road, Sirohi, Rajasthan – 307026, India</span>
+            </li>
+            <li class="mb-3 d-flex gap-2">
+              <i class="fas fa-phone-alt text-primary mt-1"></i>
+              <span>+91 9461452367 (Admissions Office) and +91 9214174743</span>
+            </li>
+            <li class="mb-3 d-flex gap-2">
+              <i class="fas fa-envelope text-primary mt-1"></i>
+              <span>avmbalikaaburoad@gmail.com</span>
+            </li>
+          </ul>
+        </div>
+        
+        <!-- Location Map Column -->
+        <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
+          <h5 class="footer-heading">Location Map</h5>
+          <div style="border-radius: 8px; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.1); height: 160px;">
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d115982.72147743513!2d72.64506509618178!3d24.47568585971515!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395d7a3cff532aef%3A0xe54ad844280cf200!2sAbu%20Road%2C%20Rajasthan%20307026!5e0!3m2!1sen!2sin!4v1718872500000!5m2!1sen!2sin" 
+              width="100%" 
+              height="100%" 
+              style="border:0;" 
+              allowfullscreen="" 
+              loading="lazy">
+            </iframe>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p class="mb-0">&copy; 2026 Govindanand Adarsh Vidya Mandir Sr. Sec. School. All rights reserved. | Design & Development: Vidya Bharati Digital Wing</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Lightbox Modal -->
+  <div id="lightboxModal" class="lightbox-modal">
+    <div class="lightbox-content">
+      <span id="lightboxClose" class="lightbox-close">&times;</span>
+      <img id="lightboxImg" class="lightbox-img" src="" alt="">
+      <div id="lightboxCaption" class="lightbox-caption"></div>
+    </div>
+  </div>
+
+  <!-- JavaScript Library CDN Links -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  
+  <!-- Custom Script -->
+  <script src="script.js"></script>
+</body>
+</html>

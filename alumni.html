@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Connect with the distinguished alumni network of Govindanand Adarsh Vidya Mandir, Abu Road.">
+  <title>Govindanand Adarsh Vidya Mandir | Alumni Portal</title>
+  
+  <!-- CSS Library CDN Links -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  
+  <!-- Custom Styles -->
+  <link href="style.css" rel="stylesheet">
+
+  <style>
+    /* ── Alumni Welcome Banner ── */
+    .alumni-welcome-banner {
+      background: linear-gradient(135deg, #0F172A 0%, #1E3A5F 60%, #F97316 100%);
+      color: #fff;
+      padding: 3rem 0 2.5rem;
+      text-align: center;
+    }
+    .alumni-welcome-banner h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      margin-bottom: 0.5rem;
+    }
+    .alumni-welcome-banner p {
+      font-size: 1.1rem;
+      opacity: 0.88;
+      max-width: 680px;
+      margin: 0 auto;
+    }
+    .alumni-welcome-banner .badge-welcome {
+      display: inline-block;
+      background: rgba(249,115,22,0.22);
+      border: 1px solid #F97316;
+      color: #F97316;
+      border-radius: 50px;
+      padding: 0.3rem 1.1rem;
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+
+    /* ── Featured Spotlight Card ── */
+    .spotlight-section {
+      background: var(--bg-section, #f8fafc);
+      padding: 4.5rem 0 3.5rem;
+    }
+    .spotlight-card {
+      background: var(--bg-white, #fff);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 12px 40px rgba(15,23,42,0.12);
+      display: flex;
+      flex-direction: row;
+      align-items: stretch;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .spotlight-photo-col {
+      flex: 0 0 260px;
+      position: relative;
+      background: linear-gradient(160deg, #0F172A 0%, #1E3A5F 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2.5rem 1.5rem;
+    }
+    .spotlight-photo-col::after {
+      content: '';
+      position: absolute;
+      top: 0; right: -1px; bottom: 0;
+      width: 32px;
+      background: var(--bg-white, #fff);
+      clip-path: polygon(100% 0, 100% 100%, 0 50%);
+    }
+    .spotlight-photo-wrapper {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      border: 4px solid #F97316;
+      overflow: hidden;
+      box-shadow: 0 0 0 8px rgba(249,115,22,0.18);
+      z-index: 1;
+    }
+    .spotlight-photo-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top;
+    }
+    .spotlight-info-col {
+      flex: 1;
+      padding: 2.5rem 2.2rem 2rem 3rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .spotlight-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(249,115,22,0.1);
+      color: #F97316;
+      border-radius: 50px;
+      padding: 0.28rem 0.9rem;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      margin-bottom: 0.9rem;
+      width: fit-content;
+    }
+    .spotlight-name {
+      font-size: 1.65rem;
+      font-weight: 800;
+      color: var(--secondary, #0F172A);
+      margin-bottom: 0.2rem;
+      line-height: 1.2;
+    }
+    [data-theme="dark"] .spotlight-name { color: #f1f5f9; }
+    .spotlight-role {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #F97316;
+      margin-bottom: 1.1rem;
+    }
+    .spotlight-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem 1.4rem;
+      margin-bottom: 1.2rem;
+    }
+    .spotlight-meta-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.87rem;
+      color: var(--text-muted, #64748b);
+    }
+    .spotlight-meta-item i {
+      color: #F97316;
+      width: 14px;
+    }
+    .spotlight-divider {
+      border: none;
+      border-top: 1px solid rgba(0,0,0,0.08);
+      margin: 1rem 0;
+    }
+    [data-theme="dark"] .spotlight-divider { border-color: rgba(255,255,255,0.08); }
+    .spotlight-bio {
+      font-size: 0.93rem;
+      color: var(--text-muted, #475569);
+      line-height: 1.7;
+      margin-bottom: 0;
+    }
+    .spotlight-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+    .spotlight-tag {
+      background: rgba(249,115,22,0.1);
+      color: #F97316;
+      border-radius: 50px;
+      padding: 0.2rem 0.75rem;
+      font-size: 0.78rem;
+      font-weight: 600;
+    }
+
+    /* Responsive */
+    @media (max-width: 700px) {
+      .spotlight-card {
+        flex-direction: column;
+      }
+      .spotlight-photo-col {
+        flex: 0 0 auto;
+        padding: 2rem 1rem 2.5rem;
+      }
+      .spotlight-photo-col::after {
+        top: auto; right: 0; bottom: -1px; left: 0;
+        width: 100%; height: 28px;
+        clip-path: polygon(0 0, 100% 0, 50% 100%);
+      }
+      .spotlight-info-col {
+        padding: 2rem 1.4rem 1.8rem;
+      }
+      .spotlight-photo-wrapper {
+        width: 130px;
+        height: 130px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Header -->
+  <nav class="navbar navbar-expand-lg navbar-custom sticky-top">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+        <img src="school logo.jpeg" alt="GAVM School Logo" class="navbar-brand-img">
+        <div class="navbar-brand-text">
+          गोविंदानंद आदर्श विद्या मंदिर
+          <span>GOVINDANAND ADARSH VIDYA MANDIR</span>
+        </div>
+      </a>
+      
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars"></i>
+      </button>
+      
+      <div class="collapse navbar-collapse" id="mainNavbar">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-center">
+          <li class="nav-item"><a class="nav-link nav-link-custom" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link nav-link-custom" href="about.html">About Us</a></li>
+          <li class="nav-item"><a class="nav-link nav-link-custom" href="academics.html">Academics</a></li>
+          <li class="nav-item"><a class="nav-link nav-link-custom" href="infrastructure.html">Infrastructure</a></li>
+          <li class="nav-item"><a class="nav-link nav-link-custom" href="activities.html">Activities</a></li>
+          <li class="nav-item"><a class="nav-link nav-link-custom" href="gallery.html">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link nav-link-custom active" href="alumni.html">Alumni</a></li>
+          <li class="nav-item"><a class="nav-link nav-link-custom" href="contact.html">Contact Us</a></li>
+          <li class="nav-item ms-lg-2">
+            <button id="themeToggle" class="theme-toggle-btn" aria-label="Toggle Dark Mode">
+              <i class="fas fa-moon"></i>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <section class="py-5 text-white position-relative text-center" style="background: linear-gradient(135deg, var(--secondary) 0%, #1E293B 100%);">
+    <div class="container py-4">
+      <h1 class="display-5 fw-bold mb-3" data-aos="fade-down">गौरवशाली पूर्व छात्र नेटवर्क</h1>
+      <p class="lead text-primary fw-semibold mb-0" data-aos="fade-up" data-aos-delay="200">Stay connected with your school family.</p>
+    </div>
+  </section>
+
+  <!-- Welcome Banner -->
+  <div class="alumni-welcome-banner" data-aos="fade-up">
+    <div class="container">
+      <div class="badge-welcome"><i class="fas fa-hands-clapping me-1"></i> Alumni Corner</div>
+      <h2>Welcome to All Alumni of GAVM!</h2>
+      <p>
+        To every student who walked these halls — you carry the spirit of Govindanand Adarsh Vidya Mandir wherever you go.
+        This page is your home. Reconnect, inspire, and stay part of this ever-growing family. 🎓
+      </p>
+    </div>
+  </div>
+
+  <!-- Featured Alumni Spotlight -->
+  <section class="spotlight-section">
+    <div class="container">
+      <div class="section-header text-center" data-aos="fade-up">
+        <span class="section-subtitle font-weight-bold">Alumni Spotlight</span>
+        <h2 class="section-title">Website Creator</h2>
+      </div>
+
+      <div class="spotlight-card" data-aos="fade-up" data-aos-delay="100">
+        <!-- Photo Column -->
+        <div class="spotlight-photo-col">
+          <div class="spotlight-photo-wrapper">
+            <img src="website_maker.jpeg" alt="Website Creator - GAVM Alumni">
+          </div>
+        </div>
+
+        <!-- Info Column -->
+        <div class="spotlight-info-col">
+          <div class="spotlight-badge"><i class="fas fa-code"></i> Website Creator &amp; GAVM Alumni</div>
+          <p class="spotlight-role mt-2">
+            <i class="fas fa-flask me-1"></i> B.Tech Chemical Engineering &nbsp;|&nbsp;
+            <strong>IIT Roorkee</strong>
+          </p>
+
+          <div class="spotlight-meta">
+            <div class="spotlight-meta-item">
+              <i class="fas fa-graduation-cap"></i>
+              <span>Passed out: <strong>2022</strong></span>
+            </div>
+            <div class="spotlight-meta-item">
+              <i class="fas fa-school"></i>
+              <span>At GAVM: <strong>LKG – Class 10 (12 Years)</strong></span>
+            </div>
+            <div class="spotlight-meta-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <span>Roorkee, Uttarakhand</span>
+            </div>
+          </div>
+
+          <hr class="spotlight-divider">
+
+          <p class="spotlight-bio">
+            A student of GAVM from LKG to Class 10, passing out in 2022 after spending 12 years at this school.
+            Currently pursuing <strong>B.Tech in Chemical Engineering</strong> at <strong>IIT Roorkee</strong>.
+            Built this website as a small way to give back to the school. 🙏
+          </p>
+
+          <div class="spotlight-tags">
+            <span class="spotlight-tag"><i class="fas fa-landmark me-1"></i>IIT Roorkee</span>
+            <span class="spotlight-tag"><i class="fas fa-atom me-1"></i>Chemical Engineering</span>
+            <span class="spotlight-tag"><i class="fas fa-code me-1"></i>Web Developer</span>
+            <span class="spotlight-tag"><i class="fas fa-calendar me-1"></i>Batch 2022</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Alumni Directory Section -->
+  <section class="py-5 my-4">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-subtitle font-weight-bold">Alumni Registry</span>
+        <h2 class="section-title">Alumni Directory By Batches</h2>
+      </div>
+
+      <!-- Batch Filter Selection -->
+      <div class="text-center mb-5" data-aos="fade-up">
+        <p class="fw-semibold text-secondary mb-3">Select Passing Year / Batch:</p>
+        <div class="d-flex flex-wrap justify-content-center gap-2">
+          <button class="btn filter-btn batch-select-btn" data-batch="2025">Batch 2025</button>
+          <button class="btn filter-btn batch-select-btn" data-batch="2024">Batch 2024</button>
+          <button class="btn filter-btn batch-select-btn" data-batch="2023">Batch 2023</button>
+          <button class="btn filter-btn batch-select-btn" data-batch="2022">Batch 2022</button>
+          <button class="btn filter-btn batch-select-btn" data-batch="2015">Batch 2015</button>
+          <button class="btn filter-btn batch-select-btn" data-batch="2013">Batch 2013</button>
+          <button class="btn filter-btn batch-select-btn" data-batch="2012">Batch 2012</button>
+          <button class="btn filter-btn batch-select-btn" data-batch="2010">Batch 2010</button>
+          <button class="btn filter-btn batch-select-btn" data-batch="2008">Batch 2008</button>
+        </div>
+      </div>
+
+      <!-- Notice Panel (Shown by default) -->
+      <div id="directorySelectionNotice" class="text-center py-5" data-aos="fade-up">
+        <div class="mb-4" style="font-size: 4rem; color: var(--primary);">
+          <i class="fas fa-users-viewfinder"></i>
+        </div>
+        <h4 class="text-dark">Explore Our Alumni Network</h4>
+        <p class="text-muted mx-auto" style="max-width: 500px;">
+          Please select a batch from the buttons above to view details of our distinguished alumni who graduated in that year.
+        </p>
+      </div>
+
+      <!-- Alumni Cards Container (Rendered dynamically) -->
+      <div id="alumniDirectoryCards" class="row g-4">
+        <!-- JS inserts filtered alumni cards here -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Alumni Registration Form Section -->
+  <section class="py-5" style="background-color: var(--bg-white);">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-10 col-xl-8">
+          <div class="alumni-form-section" data-aos="fade-up">
+            <h3 class="text-center mb-2 text-primary"><i class="fas fa-user-plus"></i> Alumni Registration Form</h3>
+            <p class="text-center text-muted mb-5">Are you a graduate of Govindanand Adarsh Vidya Mandir? Fill out this form to join the directory.</p>
+            
+            <div id="alumniFormAlert"></div>
+
+            <form id="alumniRegForm" class="row g-4" novalidate>
+              <div class="col-md-6">
+                <label for="fullName" class="form-label form-label-custom">Full Name *</label>
+                <input type="text" class="form-control form-control-custom" id="fullName" placeholder="Enter your full name" required>
+                <div class="invalid-feedback">Please enter your full name.</div>
+              </div>
+
+              <div class="col-md-6">
+                <label for="fatherName" class="form-label form-label-custom">Father's Name *</label>
+                <input type="text" class="form-control form-control-custom" id="fatherName" placeholder="Enter father's name" required>
+                <div class="invalid-feedback">Please enter father's name.</div>
+              </div>
+
+              <div class="col-md-6">
+                <label for="mobileNo" class="form-label form-label-custom">Mobile Number *</label>
+                <input type="tel" class="form-control form-control-custom" id="mobileNo" placeholder="10-digit mobile number" required pattern="[6-9]\d{9}">
+                <div class="invalid-feedback">Please enter a valid 10-digit mobile number.</div>
+              </div>
+
+              <div class="col-md-6">
+                <label for="email" class="form-label form-label-custom">Email Address *</label>
+                <input type="email" class="form-control form-control-custom" id="email" placeholder="example@mail.com" required>
+                <div class="invalid-feedback">Please enter a valid email address.</div>
+              </div>
+
+              <div class="col-md-6">
+                <label for="passingYear" class="form-label form-label-custom">Passing Year (Batch) *</label>
+                <select class="form-select form-control-custom" id="passingYear" required>
+                  <option value="" disabled selected>Select Year</option>
+                  <option value="2025">2025</option>
+                  <option value="2024">2024</option>
+                  <option value="2023">2023</option>
+                  <option value="2022">2022</option>
+                  <option value="2015">2015</option>
+                  <option value="2013">2013</option>
+                  <option value="2012">2012</option>
+                  <option value="2010">2010</option>
+                  <option value="2008">2008</option>
+                </select>
+                <div class="invalid-feedback">Please select your graduation year.</div>
+              </div>
+
+              <div class="col-md-6">
+                <label for="classPassed" class="form-label form-label-custom">Class Passed *</label>
+                <select class="form-select form-control-custom" id="classPassed" required>
+                  <option value="" disabled selected>Select Class</option>
+                  <option value="12">Class 12 (Arts Stream)</option>
+                  <option value="10">Class 10</option>
+                </select>
+                <div class="invalid-feedback">Please select the class completed.</div>
+              </div>
+
+              <div class="col-md-6">
+                <label for="profession" class="form-label form-label-custom">Current Profession *</label>
+                <input type="text" class="form-control form-control-custom" id="profession" placeholder="e.g. Teacher, Engineer, Officer" required>
+                <div class="invalid-feedback">Please enter your current profession.</div>
+              </div>
+
+              <div class="col-md-6">
+                <label for="company" class="form-label form-label-custom">Current Company / Organization *</label>
+                <input type="text" class="form-control form-control-custom" id="company" placeholder="e.g. Google, Govt Department, Startup" required>
+                <div class="invalid-feedback">Please enter your workplace details.</div>
+              </div>
+
+              <div class="col-md-6">
+                <label for="city" class="form-label form-label-custom">Current City *</label>
+                <input type="text" class="form-control form-control-custom" id="city" placeholder="e.g. Abu Road, Jaipur, Bengaluru" required>
+                <div class="invalid-feedback">Please enter your current city.</div>
+              </div>
+
+              <div class="col-md-6">
+                <label for="state" class="form-label form-label-custom">State *</label>
+                <input type="text" class="form-control form-control-custom" id="state" placeholder="e.g. Rajasthan, Karnataka" required>
+                <div class="invalid-feedback">Please enter your state.</div>
+              </div>
+
+              <div class="col-md-12">
+                <label for="linkedin" class="form-label form-label-custom">LinkedIn Profile URL (Optional)</label>
+                <input type="url" class="form-control form-control-custom" id="linkedin" placeholder="https://linkedin.com/in/username">
+              </div>
+
+              <div class="col-md-12">
+                <label for="achievements" class="form-label form-label-custom">Key Achievements *</label>
+                <textarea class="form-control form-control-custom" id="achievements" rows="3" placeholder="Briefly describe your academic or professional achievements..." required></textarea>
+                <div class="invalid-feedback">Please share your key achievements.</div>
+              </div>
+
+              <div class="col-md-12">
+                <label for="message" class="form-label form-label-custom">Message for School / Students</label>
+                <textarea class="form-control form-control-custom" id="message" rows="3" placeholder="Any message, guidance, or feedback for current students..."></textarea>
+              </div>
+
+              <div class="col-md-12">
+                <label class="form-label form-label-custom">Profile Photograph (Optional)</label>
+                <div class="form-upload-box" id="uploadBox">
+                  <input type="file" id="alumniPhoto" accept="image/*">
+                  <i class="fas fa-cloud-upload-alt form-upload-icon"></i>
+                  <h5 class="mb-1">Drag file here or click to upload</h5>
+                  <p class="text-muted small mb-0">PNG, JPG, or JPEG formats (max 2MB)</p>
+                </div>
+              </div>
+
+              <div class="col-md-12 text-center mt-5">
+                <button type="submit" class="btn btn-primary-custom px-5">Submit Registration</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer class="footer-custom">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+          <div class="d-flex align-items-center gap-2 mb-3">
+            <img src="school logo.jpeg" alt="GAVM Logo" class="footer-logo">
+            <div>
+              <h5 class="footer-brand-title">गोविंदानंद आदर्श विद्या मंदिर</h5>
+              <span class="footer-brand-sub">Govindanand Adarsh Vidya Mandir</span>
+            </div>
+          </div>
+          <p class="small text-muted mb-3">Dedicated to the holistic development of students through quality education, discipline, and cultural values. An outstanding Hindi-medium school in Sirohi, Rajasthan.</p>
+          <div class="social-icons">
+            <a href="#" class="social-icon-btn"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-icon-btn"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-icon-btn"><i class="fab fa-youtube"></i></a>
+            <a href="#" class="social-icon-btn"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+        
+        <div class="col-lg-2 col-md-6" data-aos="fade-up" data-aos-delay="200">
+          <h5 class="footer-heading">Quick Links</h5>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="academics.html">Academics</a></li>
+            <li><a href="infrastructure.html">Infrastructure</a></li>
+            <li><a href="activities.html">Activities</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="alumni.html">Alumni</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        
+        <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+          <h5 class="footer-heading">Contact Details</h5>
+          <ul class="footer-links text-muted" style="padding-left: 0;">
+            <li class="mb-3 d-flex gap-2">
+              <i class="fas fa-map-marker-alt text-primary mt-1"></i>
+              <span>Govinddham, Abu Road, Sirohi, Rajasthan – 307026, India</span>
+            </li>
+            <li class="mb-3 d-flex gap-2">
+              <i class="fas fa-phone-alt text-primary mt-1"></i>
+              <span>+91 94614 52367</span>
+            </li>
+            <li class="mb-3 d-flex gap-2">
+              <i class="fas fa-envelope text-primary mt-1"></i>
+              <span>avmbalikaaburoad@gmail.com</span>
+            </li>
+          </ul>
+        </div>
+        
+        <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
+          <h5 class="footer-heading">Location Map</h5>
+          <div style="border-radius: 8px; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.1); height: 160px;">
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d115982.72147743513!2d72.64506509618178!3d24.47568585971515!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395d7a3cff532aef%3A0xe54ad844280cf200!2sAbu%20Road%2C%20Rajasthan%20307026!5e0!3m2!1sen!2sin!4v1718872500000!5m2!1sen!2sin" 
+              width="100%" 
+              height="100%" 
+              style="border:0;" 
+              allowfullscreen="" 
+              loading="lazy">
+            </iframe>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p class="mb-0">&copy; 2026 Govindanand Adarsh Vidya Mandir Sr. Sec. School. All rights reserved. | Design &amp; Development: GAVM Alumni — IIT Roorkee</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Lightbox Modal -->
+  <div id="lightboxModal" class="lightbox-modal">
+    <div class="lightbox-content">
+      <span id="lightboxClose" class="lightbox-close">&times;</span>
+      <img id="lightboxImg" class="lightbox-img" src="" alt="">
+      <div id="lightboxCaption" class="lightbox-caption"></div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

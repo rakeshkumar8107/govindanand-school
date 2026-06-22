@@ -351,7 +351,7 @@ document.addEventListener('DOMContentLoaded', function () {
         method: "POST",
         body: new FormData(alumniForm),
         headers: {
-        'Accept': 'application/json'
+          'Accept': 'application/json'
         }
       });
 

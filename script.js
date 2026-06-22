@@ -167,6 +167,48 @@ document.addEventListener('DOMContentLoaded', function () {
       avatarUrl: "website_maker.jpeg"
     }
   ];
+  // Load approved alumni from Google Sheets
+  async function loadAlumniFromSheet() {
+    try {
+      const response = await fetch(
+        "https://docs.google.com/spreadsheets/d/e/2PACX-1vSX7PoZN5UPDe2AD1RYdbUhq5P7mlfG290GC0E_un6tmNpHr4nMFFOEVBPlVLQye0KLORF6saP1GjTX/pub?output=csv"
+      );
+  
+      const csvText = await response.text();
+  
+      const rows = csvText.split('\n').slice(1);
+  
+      rows.forEach(row => {
+        const cols = row.split(',');
+  
+        // Column M = Approved
+        const approved = cols[12]?.trim().toUpperCase();
+  
+        if (approved === "YES") {
+          alumniList.push({
+            name: cols[0]?.trim() || "",
+            batch: cols[4]?.trim() || "",
+            classPassed: cols[5]?.trim() || "",
+            profession: cols[6]?.trim() || "",
+            company: cols[7]?.trim() || "",
+            city: cols[8]?.trim() || "",
+            state: cols[9]?.trim() || "",
+            achievements: cols[10]?.trim() || "",
+            avatarInitials: (cols[0] || "A")
+              .split(" ")
+              .map(word => word[0])
+              .join("")
+              .substring(0, 2)
+              .toUpperCase(),
+            avatarUrl: ""
+          });
+        }
+      });
+  
+    } catch (error) {
+      console.error("Error loading alumni data:", error);
+    }
+  }
 
   // Temp holder for uploaded image URL
   let uploadedPhotoDataUrl = null;
@@ -251,6 +293,7 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   // Attach event handlers to batch selector buttons
+  loadAlumniFromSheet();
   if (batchButtons.length > 0) {
     batchButtons.forEach(btn => {
       btn.addEventListener('click', function () {

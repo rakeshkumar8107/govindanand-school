@@ -346,6 +346,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
       // Add to directory array
       alumniList.push(newAlumnus);
+      // Send data to Formspree
+      fetch(alumniForm.action, {
+        method: "POST",
+        body: new FormData(alumniForm),
+        headers: {
+        'Accept': 'application/json'
+        }
+      });
 
       // Reset form and photo holder
       alumniForm.reset();

@@ -209,6 +209,14 @@ document.addEventListener('DOMContentLoaded', function () {
       console.error("Error loading alumni data:", error);
     }
   }
+  // Refresh currently selected batch after loading data
+  const activeBatchBtn = document.querySelector('.batch-select-btn.active');
+  
+  if (activeBatchBtn) {
+    renderAlumniForBatch(
+      activeBatchBtn.getAttribute('data-batch')
+    );
+  }
 
   // Temp holder for uploaded image URL
   let uploadedPhotoDataUrl = null;

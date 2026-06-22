@@ -263,6 +263,7 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   // Alumni Registration Form Submission Handler
+  /*
   const alumniForm = document.getElementById('alumniRegForm');
   const successAlertContainer = document.getElementById('alumniFormAlert');
 
@@ -280,7 +281,7 @@ document.addEventListener('DOMContentLoaded', function () {
         } else {
           input.classList.remove('is-invalid');
         }
-      });
+      });  */
 
       // Email validation
       const emailInput = alumniForm.querySelector('input[type="email"]');

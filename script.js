@@ -155,7 +155,7 @@ document.addEventListener('DOMContentLoaded', function () {
   // Pre-seeded: Website Creator — Batch 2022
   const alumniList = [
     {
-      name: "Website Creator",
+      name: "RAKESH KUMAR-Website Creator",
       batch: "2022",
       classPassed: "Class 10",
       profession: "B.Tech Student — Chemical Engineering",

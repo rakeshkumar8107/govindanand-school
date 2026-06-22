@@ -459,3 +459,46 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 });
+// Google Sheets Integration for Alumni Form
+const alumniForm = document.getElementById("alumniRegForm");
+
+if (alumniForm) {
+  alumniForm.addEventListener("submit", async function (e) {
+    e.preventDefault();
+
+    const formData = {
+      fullName: document.getElementById("fullName").value,
+      fatherName: document.getElementById("fatherName").value,
+      mobileNo: document.getElementById("mobileNo").value,
+      email: document.getElementById("email").value,
+      passingYear: document.getElementById("passingYear").value,
+      classPassed: document.getElementById("classPassed").value,
+      profession: document.getElementById("profession").value,
+      company: document.getElementById("company").value,
+      city: document.getElementById("city").value,
+      state: document.getElementById("state").value,
+      achievements: document.getElementById("achievements").value,
+      message: document.getElementById("message").value
+    };
+
+    try {
+      const response = await fetch(
+        "https://script.google.com/macros/s/AKfycbyl-Oz811nzsvvruOHVR-phvv9Rzdd4SUlbwEF392-7ybcdHsY6B-lnJK7rsuctW8gl/exec",
+        {
+          method: "POST",
+          body: JSON.stringify(formData)
+        }
+      );
+
+      if (response.ok) {
+        alert("🎉 Registration submitted successfully!");
+        alumniForm.reset();
+      } else {
+        alert("❌ Failed to submit. Please try again.");
+      }
+    } catch (error) {
+      console.error(error);
+      alert("❌ Error submitting form.");
+    }
+  });
+}
